@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb3b1",
+                        "on-tertiary-fixed-variant": "#92001c",
+                        "primary": "#910022",
+                        "secondary": "#735c00",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#ffb3b3",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-container": "#ffcbcb",
+                        "on-error": "#ffffff",
+                        "tertiary": "#91001c",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "surface": "#fcf9f8",
+                        "primary-fixed-dim": "#ffb3b3",
+                        "secondary-container": "#fed65b",
+                        "primary-fixed": "#ffdad9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5c4040",
+                        "tertiary-fixed": "#ffdad8",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#906f6f",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#bf012f",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-container": "#ffcbc9",
+                        "tertiary-container": "#be0128",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#be002f",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#410007",
+                        "outline-variant": "#e5bdbd",
+                        "on-primary-fixed-variant": "#920022",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-fixed": "#400009",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#241a00",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#574500"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .scholar-gradient {
+            background: linear-gradient(135deg, #910022 0%, #be002f 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-[#fcf9f8] dark:bg-stone-900 transition-colors">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-headline font-bold text-[#910022] dark:text-red-500">
+                中英辩论
+            </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#910022] font-label tracking-widest transition-all duration-300" href="#">首页</a>
+<a class="text-[#910022] dark:text-red-400 border-b-2 border-[#910022] pb-1 font-bold font-label tracking-widest" href="#">关于我们</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#910022] font-label tracking-widest transition-all duration-300" href="#">辩论赛事</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#910022] font-label tracking-widest transition-all duration-300" href="#">学习资源</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<button class="flex items-center gap-2 text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 px-4 py-2 rounded-lg transition-all active:opacity-80 active:scale-[0.99] font-label tracking-widest">
+<span class="material-symbols-outlined text-lg">language</span>
+<span>语言切换</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+</button>
+<div class="absolute right-0 top-full w-40 bg-surface-container-lowest border border-outline-variant rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden pt-2 duration-300 delay-75">
+<a class="block px-4 py-3 text-sm font-label text-on-surface hover:bg-surface-container-high transition-colors border-b border-outline-variant/30" href="{{DATA:SCREEN:SCREEN_16}}">
+        English
+      </a>
+<a class="block px-4 py-3 text-sm font-label text-on-surface hover:bg-surface-container-high transition-colors border-b border-outline-variant/30" href="{{DATA:SCREEN:SCREEN_10}}">
+        简体中文
+      </a>
+<a class="block px-4 py-3 text-sm font-label text-on-surface hover:bg-surface-container-high transition-colors" href="{{DATA:SCREEN:SCREEN_20}}">
+        繁體中文
+      </a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8 py-20">
+<!-- Hero Section -->
+<header class="relative mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-7">
+<span class="font-label tracking-widest text-secondary uppercase mb-4 block">About Us / 关于我们</span>
+<h1 class="font-headline text-7xl md:text-8xl text-primary leading-tight mb-8">
+                        远见者 <br/>
+<span class="italic text-on-surface">The Visionaries</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                        在中英辩论学院，我们相信卓越的辩论不仅是语言的艺术，更是跨文化理解与批判性思维的巅峰汇流。我们致力于培养能够跨越语言鸿沟、洞察真理的未来领袖。
+                    </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden shadow-2xl">
+<img alt="Traditional library with modern architecture" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Interior of a modern scholarly library with wooden accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2Rjxlrw5xHALgvA-1_immSW5CJ7vN8hHpVBHABYBPidG4BVPn-aW25FDDh7Wr3T4BWt2_gbsmbwd5M9gjiGPip24mVgKuOjldFTud4gONiLLUyNGGn2e7yhxP2tESCrTcPDBgE-l5g_YzN5qPp7l3YOVjKkbk6Rrb1p1FDy4P1jNmlVo4KguE2en7arkXJSAfI0DO0xwwnC_mQV-ZfxAbO50aRPRMVBXl_y2_jqL84fJqG9Y2xboi-RFxl75WmQEkpdYbBVswQE"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-secondary-container p-8 rounded-xl shadow-lg hidden md:block">
+<p class="font-headline text-3xl text-on-secondary-container italic">"Truth through dialogue."</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Mission Statement: Tonal Shift -->
+<section class="mb-32 p-16 bg-surface-container-low rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-12 opacity-5">
+<span class="material-symbols-outlined text-[240px]" data-icon="auto_stories">auto_stories</span>
+</div>
+<div class="max-w-3xl relative z-10">
+<h2 class="font-headline text-4xl text-primary mb-8 underline decoration-secondary-container decoration-4 underline-offset-8">我们的使命</h2>
+<div class="space-y-6 text-lg text-on-surface leading-loose">
+<p>我们致力于在21世纪的语境下，重塑中国博雅教育的传统。通过严格的辩论训练、深度的文化交流和前瞻性的学术研究，我们为全球学子搭建一座通往理性辩思与卓越表达的桥梁。</p>
+<p>在过去的十年里，中英辩论学院已经成为大中华区最具影响力的辩论教育机构之一，为成千上万的年轻人提供了在全球舞台上发声的机会。</p>
+</div>
+</div>
+</section>
+<!-- Executive Committee: Bento Grid Layout -->
+<section class="mb-32">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-5xl text-primary">执行委员会</h2>
+<p class="text-secondary font-label tracking-widest mt-2 uppercase">Executive Committee</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Dr. Lawrence Chen -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-high border-l-4 border-secondary">
+<div class="aspect-square mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Dr. Lawrence Chen" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a professional man in a suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzaN_pVzIop_qDoznpu6Da4gcnD_UJPWFxwQlo8j25uUJk5P-VeYEee1Ty6s6CeCGff2caMYGh0RhkIqlLItImYsb6BceQqKbtENFPrXpwo2rZ89OEjFhqUuVOxOBbivm2K0yruz_bB2mXenZ7POftLrcM--t4lQbKX6vJ-TlDx8h8sv1p1akF8wg6Tcp-Rb-iXyXTjC8yv5NQgntQKepeKxkQRBF68P3EuSysgJhRO8ywb6I63ie8bMUINTRn26Ei6sC_8vlkvc"/>
+</div>
+<h3 class="font-headline text-2xl text-on-surface">陈博士</h3>
+<p class="font-label text-secondary tracking-widest mb-4">DR. LAWRENCE CHEN</p>
+<p class="text-on-surface-variant font-light">创办人兼院长。曾任牛津大学辩论社资深导师，致力于将国际议会制辩论引入亚洲教育体系。</p>
+</div>
+<!-- Sarah Lin -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-high border-l-4 border-secondary">
+<div class="aspect-square mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Sarah Lin" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a professional woman wearing glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMFemO74u7Xl5naUuCv8nGS8z0M7FgbUpzpirBP9YCBLdl4gS1lxbVcqSRmC7qHuGuKWme3kr8tIrZ8noNAN6YWrFDag71Bq1vlA6Gja9xzjO2W8adglEM6jjipjs_tdB4mQ5XSjZ6SuQCg0yEW8ie7Yyj98jUKXdajR_ZFa0i75uwYLCmtGsiuI2ldlEYJWArf33T9Bc7fvYDw-ZCIUHhQUDDz3wNQ0mSoOm9evevchsRMvzQ65yZHodT_9Pz8prxd4m5JHkoQk"/>
+</div>
+<h3 class="font-headline text-2xl text-on-surface">Sarah Lin</h3>
+<p class="font-label text-secondary tracking-widest mb-4">ACADEMIC DIRECTOR</p>
+<p class="text-on-surface-variant font-light">学术总监。哈佛大学公共政策硕士，专注于开发双语思辨课程体系，曾多次担任世界辩论赛评委。</p>
+</div>
+<!-- James T. Wu -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-high border-l-4 border-secondary">
+<div class="aspect-square mb-6 rounded-lg overflow-hidden bg-surface-container">
+<img alt="James T. Wu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a young man smiling in a scholarly setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUOJZAVIyO-wNedC3YmjZ-TphDA3qM-E9d-FFZe904j17zOOpdHuahZPIjCe7H047EilWoMenZ1pnyuh8dxqMORtuuLgmg1yAC2ctCEfo0rXiVHWpf0lIk-8QnNUL_raoLGUsXLvBCE_eaOEWVlC7pTFuvxdxATPwAWcsTJshn6SS9fgyIZkGaJHjuFLhh1L3fg3rDP_GM-96D_1Z5TekOsEakE9uUEEcMQngD1JCFxFe6xmiHYyLHtPyOSzeAgakVaN5ossR8114"/>
+</div>
+<h3 class="font-headline text-2xl text-on-surface">James T. Wu</h3>
+<p class="font-label text-secondary tracking-widest mb-4">GLOBAL OUTREACH</p>
+<p class="text-on-surface-variant font-light">国际事务主管。负责学院与全球顶尖名校的战略合作，曾主导多次中英国际青年论坛。</p>
+</div>
+</div>
+</section>
+<!-- Timeline: Our Journey -->
+<section class="mb-32">
+<h2 class="font-headline text-5xl text-primary text-center mb-20">我们的历程 <br/><span class="italic text-on-surface-variant text-3xl">Our Journey</span></h2>
+<div class="relative">
+<!-- Center Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-secondary-container hidden md:block"></div>
+<div class="space-y-24">
+<!-- 2012 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full">
+<div class="md:w-[45%] text-right hidden md:block">
+<h4 class="font-headline text-4xl text-secondary">2012</h4>
+</div>
+<div class="z-10 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg outline outline-offset-4 outline-secondary-container mb-4 md:mb-0">
+<span class="material-symbols-outlined text-white" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="md:w-[45%] bg-surface-container-low p-8 rounded-xl shadow-sm">
+<h4 class="font-headline text-4xl text-secondary md:hidden mb-4">2012</h4>
+<h5 class="text-xl font-bold mb-2">破土动工</h5>
+<p class="text-on-surface-variant leading-relaxed">中英辩论工作室在上海成立，确立了以“思辨教育”为核心的办学初衷。</p>
+</div>
+</div>
+<!-- 2018 -->
+<div class="flex flex-col md:flex-row-reverse items-center md:justify-between w-full">
+<div class="md:w-[45%] text-left hidden md:block">
+<h4 class="font-headline text-4xl text-secondary">2018</h4>
+</div>
+<div class="z-10 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg outline outline-offset-4 outline-secondary-container mb-4 md:mb-0">
+<span class="material-symbols-outlined text-white" data-icon="public">public</span>
+</div>
+<div class="md:w-[45%] bg-surface-container-low p-8 rounded-xl shadow-sm text-right">
+<h4 class="font-headline text-4xl text-secondary md:hidden mb-4">2018</h4>
+<h5 class="text-xl font-bold mb-2">国际腾飞</h5>
+<p class="text-on-surface-variant leading-relaxed">正式更名为“中英辩论学院”，并在北京及伦敦设立教学中心。</p>
+</div>
+</div>
+<!-- 2024 -->
+<div class="flex flex-col md:flex-row items-center md:justify-between w-full">
+<div class="md:w-[45%] text-right hidden md:block">
+<h4 class="font-headline text-4xl text-secondary">2024</h4>
+</div>
+<div class="z-10 bg-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg outline outline-offset-4 outline-secondary-container mb-4 md:mb-0">
+<span class="material-symbols-outlined text-white" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="md:w-[45%] bg-surface-container-low p-8 rounded-xl shadow-sm">
+<h4 class="font-headline text-4xl text-secondary md:hidden mb-4">2024</h4>
+<h5 class="text-xl font-bold mb-2">迈向未来</h5>
+<p class="text-on-surface-variant leading-relaxed">推出“全球数字思辨实验室”，利用AI辅助辩论评估系统提升教学精度。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature CTA Section -->
+<section class="scholar-gradient rounded-xl p-16 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl mb-6">加入辩论的殿堂</h2>
+<p class="font-light text-xl mb-12 max-w-2xl mx-auto opacity-90">无论是寻找深度的智慧对话，还是希望提升批判性思维，我们都欢迎您的加入。</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-lg font-bold hover:brightness-110 transition-all shadow-xl active:scale-95">了解课程项目</button>
+<button class="border border-white/30 backdrop-blur-md px-10 py-4 rounded-lg font-bold hover:bg-white/10 transition-all active:scale-95">联系委员会</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/15 bg-[#f6f3f2] dark:bg-stone-950 transition-colors">
+<div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-headline text-stone-800 dark:text-stone-200 mb-2">中英辩论学院</div>
+<p class="font-label text-sm tracking-tight text-stone-500 dark:text-stone-400">
+                    © 2024 中英辩论学院. 版权所有. 传承博雅教育精神.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label text-sm tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#be002f] dark:hover:text-red-400 transition-colors" href="#">隐私政策</a>
+<a class="font-label text-sm tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#be002f] dark:hover:text-red-400 transition-colors" href="#">使用条款</a>
+<a class="font-label text-sm tracking-tight text-[#910022] underline decoration-primary/30 underline-offset-4" href="#">联系我们</a>
+<a class="font-label text-sm tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#be002f] dark:hover:text-red-400 transition-colors" href="#">加入我们</a>
+</div>
+</div>
+</footer>
+</body></html>

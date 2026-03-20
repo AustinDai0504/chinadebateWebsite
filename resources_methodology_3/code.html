@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#ffb3b1",
+              "on-tertiary-fixed-variant": "#92001c",
+              "primary": "#910022",
+              "secondary": "#735c00",
+              "secondary-fixed": "#ffe088",
+              "secondary-fixed-dim": "#e9c349",
+              "inverse-primary": "#ffb3b3",
+              "inverse-on-surface": "#f3f0ef",
+              "on-primary-container": "#ffcbcb",
+              "on-error": "#ffffff",
+              "tertiary": "#91001c",
+              "on-error-container": "#93000a",
+              "background": "#fcf9f8",
+              "surface-container": "#f0eded",
+              "surface": "#fcf9f8",
+              "primary-fixed-dim": "#ffb3b3",
+              "secondary-container": "#fed65b",
+              "primary-fixed": "#ffdad9",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#5c4040",
+              "tertiary-fixed": "#ffdad8",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#906f6f",
+              "on-primary": "#ffffff",
+              "surface-tint": "#bf012f",
+              "surface-container-high": "#eae7e7",
+              "surface-container-highest": "#e5e2e1",
+              "on-tertiary-container": "#ffcbc9",
+              "tertiary-container": "#be0128",
+              "surface-dim": "#dcd9d9",
+              "primary-container": "#be002f",
+              "on-surface": "#1c1b1b",
+              "on-background": "#1c1b1b",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-fixed": "#410007",
+              "outline-variant": "#e5bdbd",
+              "on-primary-fixed-variant": "#920022",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e5e2e1",
+              "on-secondary-container": "#745c00",
+              "on-primary-fixed": "#400009",
+              "surface-bright": "#fcf9f8",
+              "inverse-surface": "#313030",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#241a00",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#574500"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .tonal-shift { background-color: #f6f3f2; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(16px); background: rgba(252, 249, 248, 0.85); }
+        .debate-pulse { border-left: 4px solid #735c00; }
+        .scholar-gradient { background: linear-gradient(135deg, #910022 0%, #be002f 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-headline font-bold text-primary">辯論學社</div>
+<div class="hidden md:flex items-center gap-8 font-label text-lg tracking-tight">
+<a class="text-slate-700 hover:text-primary transition-colors duration-300" href="#">首頁</a>
+<a class="text-slate-700 hover:text-primary transition-colors duration-300" href="#">關於我們</a>
+<a class="text-slate-700 hover:text-primary transition-colors duration-300" href="#">賽事活動</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">辯論資源</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-high px-3 py-1.5 rounded-xl">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 font-label" placeholder="搜尋資源..." type="text"/>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-outline-variant text-primary font-label hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-sm">translate</span>
+<span>語言切換</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="absolute right-0 w-40 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-xl py-2 hidden group-hover:block z-50 animate-fade-in mt-0">
+<a class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-surface-container-low hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_15}}">
+      简体中文
+    </a>
+<a class="block px-4 py-2 text-sm font-bold text-primary bg-surface-container-low" href="{{DATA:SCREEN:SCREEN_6}}">
+      繁體中文
+      <span class="material-symbols-outlined text-xs ml-1">check</span>
+</a>
+<a class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-surface-container-low hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_19}}">
+      English
+    </a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-8 py-16 md:py-24">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<span class="font-label text-secondary font-semibold tracking-widest uppercase mb-4 block">Methodology &amp; Resources</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-primary leading-tight mb-6">
+                        英式辯論：<br/>方法論與資源
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-lg mb-8 leading-relaxed">
+                        深入探索英國議會制辯論（BP）的核心結構。從議事規則到邏輯架構，我們為追求卓越的辯手提供最嚴謹的學術指南。
+                    </p>
+<div class="flex gap-4">
+<button class="scholar-gradient text-white px-8 py-4 rounded-xl font-label font-bold shadow-lg hover:opacity-90 transition-opacity flex items-center gap-3">
+<span class="material-symbols-outlined">menu_book</span>
+                            立即開始學習
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transform rotate-2">
+<img class="w-full h-full object-cover" data-alt="Classical library interior with leather books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3c5m3r-9RwZSa16rYYeq26XuDqKTA9I1fg1SLaOHaTZMQNvVCUjbvH7vPRWBW7i6C78HWPeIVM2DqNNgmGoY6WuyQ_-KppLDp_zwb8_fHu9uPrdSm6ogaB05W-XApelVUWS61UWlCgHpiaubKGCfRcs1fPhfLkNLPYli51lvm8_gfhTzMj5ER2UeMNokhDdl4a8h-KHLGkWbuUrOireRe-j2---KqbKJh2wMRw2U8DA4NxjuIb7un_u99m6a0vNsLLWyOXJCh1zI"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary-container p-8 rounded-xl shadow-xl max-w-xs transform -rotate-2">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl mb-4" data-weight="fill">verified_user</span>
+<p class="text-on-secondary-container font-headline text-xl font-bold italic">「辯論不只是言語的交鋒，更是智慧的砥礪。」</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Chapter Sections: Asymmetric Layout -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex items-end justify-between mb-16">
+<h2 class="font-headline text-4xl font-bold text-primary">核心章節指南</h2>
+<div class="h-[2px] flex-grow mx-8 mb-4 bg-outline-variant opacity-20 hidden md:block"></div>
+<span class="font-label text-on-surface-variant">Chapter 01-04</span>
+</div>
+<div class="grid md:grid-cols-12 gap-8">
+<!-- Chapter 1: The House -->
+<div class="md:col-span-7 bg-surface-container-lowest p-10 rounded-xl shadow-sm debate-pulse group hover:bg-surface transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label text-secondary font-bold text-2xl">01</span>
+<span class="material-symbols-outlined text-primary text-4xl opacity-20 group-hover:opacity-100 transition-opacity">gavel</span>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-4">議院 (The House)</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">了解辯論場域中的程序正義。從議長職責、POI（質詢）的禮儀到辯論時間的管理。掌握場上禮節是展現專業的第一步。</p>
+<ul class="space-y-3 font-label text-sm text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">arrow_forward</span> 議長職權說明</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">arrow_forward</span> 程序動議準則</li>
+</ul>
+</div>
+<!-- Chapter 2: The Proposition -->
+<div class="md:col-span-5 bg-primary p-10 rounded-xl text-white shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">account_balance</span>
+</div>
+<span class="font-label text-secondary-container font-bold text-2xl block mb-6">02</span>
+<h3 class="font-headline text-3xl font-bold mb-4">政府方 (The Proposition)</h3>
+<p class="opacity-80 mb-8">定義辯題、建立架構與負擔證成義務。如何構建一個無懈可擊的政策模型？</p>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-bold text-sm">閱讀詳情</button>
+</div>
+<!-- Chapter 3: The Opposition -->
+<div class="md:col-span-5 bg-surface-container-high p-10 rounded-xl debate-pulse">
+<span class="font-label text-secondary font-bold text-2xl block mb-6">03</span>
+<h3 class="font-headline text-3xl font-bold mb-4">反對黨 (The Opposition)</h3>
+<p class="text-on-surface-variant mb-6">反駁的藝術。如何識別對方邏輯漏洞，並提出具有競爭性的反面論點（Counter-prop）。</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface rounded-full text-xs font-label">反駁策略</span>
+<span class="px-3 py-1 bg-surface rounded-full text-xs font-label">論點削弱</span>
+</div>
+</div>
+<!-- Chapter 4: The Adjudication -->
+<div class="md:col-span-7 bg-surface-container-lowest p-10 rounded-xl shadow-sm border border-outline-variant border-opacity-10 group">
+<div class="flex items-center gap-4 mb-6">
+<span class="font-label text-secondary font-bold text-2xl">04</span>
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-4">評判 (The Adjudication)</h3>
+<p class="text-on-surface-variant mb-6">從評判的角度思考。了解比較性（Comparatives）、邊際貢獻（Engagement）以及判準的權衡。這是提升辯論層次的關鍵要素。</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="block font-bold text-primary mb-1">判準邏輯</span>
+<span class="text-xs text-on-surface-variant">如何決定勝負</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="block font-bold text-primary mb-1">評分標準</span>
+<span class="text-xs text-on-surface-variant">Speaker Points</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Resource Library: Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-bold text-primary mb-4">資源庫</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body">所有您需要的學術文件與規則手冊，皆可在此免費獲取。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-white border border-outline-variant border-opacity-20 p-8 rounded-xl hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">官方BP規則手冊</h4>
+<span class="text-xs text-on-surface-variant uppercase font-label">PDF | 2.4 MB</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">包含世界大學辯論賽（WUDC）最新修訂的議事規則與評判準則。這是所有辯手的必備文獻。</p>
+<button class="text-primary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
+                        立即下載 <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">video_library</span>
+<h4 class="font-bold mb-2">視頻教程</h4>
+<p class="text-xs text-on-surface-variant">24+ 個教學視頻，涵蓋從入門到進階的所有主題。</p>
+</div>
+<a class="mt-4 text-secondary font-bold text-sm underline" href="#">觀看頻道</a>
+</div>
+<div class="bg-secondary-container p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-on-secondary-container text-4xl mb-4">quiz</span>
+<h4 class="font-bold mb-2 text-on-secondary-container">常見問題 FAQs</h4>
+<p class="text-xs text-on-secondary-container opacity-80">針對規則疑義的官方解答與案例分析。</p>
+</div>
+<a class="mt-4 text-on-secondary-container font-bold text-sm" href="#">查看解答</a>
+</div>
+<div class="md:col-span-2 bg-primary p-8 rounded-xl text-white">
+<h4 class="font-headline text-2xl font-bold mb-4">加入我們的學術社群</h4>
+<p class="opacity-80 text-sm mb-6">與來自全球的辯論愛好者探討理論，獲取第一手的賽事資源。每週更新辯題分析與精彩賽事回顧。</p>
+<div class="flex gap-4">
+<input class="flex-grow bg-white/10 border-white/20 rounded-lg text-sm focus:ring-secondary-container focus:border-secondary-container placeholder:text-white/50" placeholder="輸入您的電子郵件" type="email"/>
+<button class="bg-white text-primary px-6 py-2 rounded-lg font-bold text-sm">訂閱</button>
+</div>
+</div>
+<div class="md:col-span-2 grid grid-cols-2 gap-6">
+<div class="bg-surface-container-high p-6 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">archive</span>
+<h5 class="font-bold text-sm mb-1">歷年辯題庫</h5>
+<p class="text-[10px] text-on-surface-variant">收錄自2010年起的各大賽事辯題。</p>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">analytics</span>
+<h5 class="font-bold text-sm mb-1">邏輯訓練模板</h5>
+<p class="text-[10px] text-on-surface-variant">視覺化的論點構建工作表下載。</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t-0 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+<div class="text-center md:text-left">
+<div class="font-headline font-bold text-primary text-xl mb-2">辯論學社</div>
+<p class="font-sans text-sm tracking-wide text-slate-600">© 2024 辯論學社. 秉持學術嚴謹，弘揚辯論精神。</p>
+</div>
+<div class="flex gap-8 font-sans text-sm tracking-wide">
+<a class="text-slate-600 hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">隱私政策</a>
+<a class="text-slate-600 hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">使用條款</a>
+<a class="text-slate-600 hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">聯繫我們</a>
+<a class="text-slate-600 hover:text-primary underline opacity-80 hover:opacity-100 transition-opacity" href="#">加入我們</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

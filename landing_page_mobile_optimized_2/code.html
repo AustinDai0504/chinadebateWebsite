@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>中英辩论 - Scholarch Debate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb3b1",
+                        "on-tertiary-fixed-variant": "#92001c",
+                        "primary": "#910022",
+                        "secondary": "#735c00",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#ffb3b3",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-container": "#ffcbcb",
+                        "on-error": "#ffffff",
+                        "tertiary": "#91001c",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "surface": "#fcf9f8",
+                        "primary-fixed-dim": "#ffb3b3",
+                        "secondary-container": "#fed65b",
+                        "primary-fixed": "#ffdad9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5c4040",
+                        "tertiary-fixed": "#ffdad8",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#906f6f",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#bf012f",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-container": "#ffcbc9",
+                        "tertiary-container": "#be0128",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#be002f",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#410007",
+                        "outline-variant": "#e5bdbd",
+                        "on-primary-fixed-variant": "#920022",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-fixed": "#400009",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#241a00",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#574500"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(252, 249, 248, 0.85);
+        }
+        .scholar-gradient {
+            background: linear-gradient(135deg, #910022 0%, #be002f 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 glass-nav transition-colors">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-headline font-bold text-primary">中英辩论</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary pb-1 font-bold border-b-2 border-primary font-label tracking-widest text-sm uppercase" href="#">首页</a>
+<a class="text-stone-600 hover:text-primary transition-all duration-300 font-label tracking-widest text-sm uppercase" href="#">关于我们</a>
+<a class="text-stone-600 hover:text-primary transition-all duration-300 font-label tracking-widest text-sm uppercase" href="#">辩论赛事</a>
+<a class="text-stone-600 hover:text-primary transition-all duration-300 font-label tracking-widest text-sm uppercase" href="#">学习资源</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<button class="flex items-center gap-2 text-stone-600 font-label text-sm tracking-widest hover:text-primary transition-all relative">
+<span class="material-symbols-outlined text-sm">language</span>
+                    语言切换
+                </button>
+<div class="absolute right-0 w-40 bg-surface shadow-xl rounded-xl border border-outline-variant/15 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 top-full pt-2">
+<a class="block px-4 py-2 text-sm text-primary font-bold bg-surface-container-low" href="#">简体中文</a>
+<a class="block px-4 py-2 text-sm text-stone-600 hover:bg-stone-100" href="{{DATA:SCREEN:SCREEN_28}}">繁體中文</a>
+<a class="block px-4 py-2 text-sm text-stone-600 hover:bg-stone-100" href="{{DATA:SCREEN:SCREEN_35}}">English</a>
+</div>
+</div>
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-stone-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-32 font-label" placeholder="搜索课程或赛事" type="text"/>
+</div>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[600px] md:h-[870px] overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-90 mix-blend-multiply grayscale-[0.2]" data-alt="Modern university debate hall with elegant wood paneling and red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKSjW-0hBFqcPlknBqrkxz0O6lz9_SlsdFs8AjP-X9kFdJvknRTm6PQS1MX-u3t9AchnuQK6_q2ZMNLT6kdw2Vk-KluGQ1_y85xCPwzTGHV7ReSMzeJNuMYhKmD5JHn5cX8WD8Kj5pUySFaC_dGkWuFkTcd_L_N21Y-li1ODgSX6PKfhZYs1IvpKvDcfXZ0WKH-ToBeZ1YtvIeusUgf2fuIgZnOnlOoR-jjSjuiqOQxEQkKi5ZfxBNNDVeNvf7iLyCU8qlBZIwO9g"/>
+<div class="absolute inset-0 bg-gradient-to-r md:bg-gradient-to-r from-primary/60 md:from-primary/40 via-primary/30 md:via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-black/20 md:hidden"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 h-full flex flex-col justify-center items-start">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-[0.2em] font-label uppercase">
+                    The Scholarch Excellence
+                </span>
+<h1 class="font-headline text-5xl md:text-8xl text-white font-bold leading-tight mb-8">
+                    通过智识对话<br/><span class="text-secondary-container">塑造未来</span>
+</h1>
+<p class="text-surface font-body text-lg md:text-xl mb-12 leading-relaxed opacity-90 max-w-xl">
+                    探索英式议会制辩论的魅力，在思辨中连接东西方智慧，培养具有国际视野的卓越人才。
+                </p>
+<div class="flex flex-wrap gap-4 md:gap-6">
+<button class="scholar-gradient text-white px-8 md:px-10 py-4 md:py-5 rounded-lg font-label font-bold tracking-widest text-xs md:text-sm hover:scale-[1.02] active:scale-[0.98] transition-all shadow-2xl">
+                        立即开始探索
+                    </button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-lg font-label font-bold tracking-widest text-xs md:text-sm hover:bg-white/20 transition-all">
+                        观看赛事录像
+                    </button>
+</div>
+</div>
+</div>
+<!-- Hero Decorative Element -->
+<div class="absolute bottom-0 right-0 p-12 hidden lg:block">
+<div class="flex items-end gap-4">
+<div class="w-1 h-24 bg-secondary"></div>
+<div class="w-1 h-16 bg-secondary/60"></div>
+<div class="w-1 h-32 bg-secondary"></div>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Scholarly library with old books and traditional Chinese calligraphy tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsswXGk9I-OEzgAI3hQ6dc3fn67-aqUxMNKJ0Mb5ud9E7Gu80M-JA9k9CzIjTgYpRczgTPU2lHDqPq6KzyPRO10vbxy9RHBUwZp50pLNLZLLRRfpGAYdCSxAZ4rbzuOSvM0PinFdjYXrpJDWYsKQBsFrcwsQmuzau8PtA2z5kujrOx0yYEbqvK_lUOZU0McOQH7jLMbYnLDRd1cpJbfA5jX1c2L-w6iS_6tYQWCOpm2dhOuhdXs7pRDWDXkPRLePSrFbq37P_cwGA"/>
+</div>
+<div class="absolute -bottom-12 -right-12 w-2/3 aspect-square bg-surface-container-lowest p-8 rounded-xl shadow-xl hidden md:block">
+<div class="h-full border-l-4 border-secondary flex flex-col justify-center pl-6">
+<h4 class="font-headline text-2xl text-primary font-bold mb-4">学博为师，德高为范</h4>
+<p class="text-stone-500 font-body text-sm leading-relaxed">
+                                我们始终坚持将传统教育精髓与现代思辨框架相结合，打造独特的学术成长路径。
+                            </p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline text-5xl text-on-surface font-bold leading-tight mb-10">
+                        连接传统价值与<br/>全球标准
+                    </h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+</div>
+<div>
+<h3 class="font-headline text-xl text-primary font-bold mb-3">中体西用</h3>
+<p class="text-on-surface-variant leading-relaxed">以中国传统儒家智慧为底色，运用西方逻辑思辨工具，在双语环境下进行深度对话。</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-secondary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline text-xl text-primary font-bold mb-3">国际认证</h3>
+<p class="text-on-surface-variant leading-relaxed">采用世界级辩论联赛(WUDC)标准，为中国学生提供接轨牛津、剑桥等级别的学术培训。</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<div>
+<h3 class="font-headline text-xl text-primary font-bold mb-3">领袖社群</h3>
+<p class="text-on-surface-variant leading-relaxed">汇聚全国顶尖高校辩才，建立跨越国界的精英关系网，共同探讨全球性重大议题。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Activities (Bento Grid) -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-5xl text-on-surface font-bold">精选活动</h2>
+<p class="text-stone-500 mt-4 font-label tracking-widest uppercase text-sm">Empowering the next generation of thinkers</p>
+</div>
+<a class="text-primary font-label font-bold tracking-widest text-xs flex items-center gap-2 hover:translate-x-1 transition-transform" href="#">
+                    查看全部赛事 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Featured Activity -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl h-[500px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Grand debating stage with spotlights and professional microphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfr-6CrNjXGDttjCExzist-IXaR0djfOQEe_bgDpsAESN5kFIvFmVE53UCjSRW4AnyHJQ6mUee6TA9z2hcxBcyWGgQtoo0OAi-hf5tPPvjfAWZlxkQApBESyqJ9k8jcE_U0MHd_Lcvekn-u3D68gmB37mtjkpYQZ0etiP8qSCcGg4DUWTvCkNsL3BjwU-g98e6kTnnyXYWOrQNTTD29-D0Dq7_QcY3X2GvYraXIk4A9CWPSBq50M7elDtIcFnP7CVuAaMPGkfQDCk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="inline-block px-3 py-1 mb-4 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold font-label uppercase">旗舰赛事</span>
+<h3 class="text-white font-headline text-4xl font-bold mb-4">全国大专辩论赛</h3>
+<p class="text-white/80 max-w-md font-body mb-6">中国最高规格的大学生辩论盛事，汇集海内外顶尖学府，共话时代脉搏。</p>
+<button class="bg-white text-primary px-8 py-3 rounded-lg font-label font-bold text-xs tracking-widest hover:bg-primary hover:text-white transition-colors">
+                            了解参赛详情
+                        </button>
+</div>
+</div>
+<!-- Side Cards -->
+<div class="space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl h-[234px] border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+<span class="text-primary font-label font-bold text-[10px] tracking-widest uppercase mb-4 block">学术工坊</span>
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">批判性思维夏令营</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">针对初学者设计的强化训练，掌握论点构建与有效反驳的核心技巧。</p>
+<a class="text-secondary font-bold text-xs font-label" href="#">立即报名 →</a>
+</div>
+<div class="bg-primary p-8 rounded-xl h-[234px] shadow-sm hover:shadow-lg transition-all relative overflow-hidden group">
+<div class="relative z-10">
+<span class="text-on-primary-container font-label font-bold text-[10px] tracking-widest uppercase mb-4 block">线上讲座</span>
+<h4 class="font-headline text-2xl text-white font-bold mb-4">牛津联盟大师课</h4>
+<p class="text-white/70 text-sm leading-relaxed mb-6">对话牛津辩论社主席，揭秘世界一流辩论选手的思维模式。</p>
+<a class="text-secondary-container font-bold text-xs font-label" href="#">免费预约 →</a>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-white/5 text-[150px] rotate-12 transition-transform group-hover:scale-110 group-hover:rotate-0">school</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Member Highlights -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center max-w-2xl mx-auto mb-20">
+<h2 class="font-headline text-5xl text-on-surface font-bold mb-6">核心成员</h2>
+<p class="text-on-surface-variant">我们的导师团队由来自全球知名学府的辩论冠军及资深学术专家组成。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="text-center">
+<div class="aspect-square rounded-full overflow-hidden mb-8 border-4 border-surface-container-high p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Professional man in a suit with a scholarly background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZjWufpiOvVcen0FQtkMf2G897McpxUGiEYD2yIXK77zciqbuISLasFVYXuKjSpjaqYe-qIhryKDQ-bY_bFV64INbjH-OxaVOWQZ5l7zeXBlIdfAJY0z0Nv3DI8iYW9Q56egFp-hpSR68dVS46ni97PLJRtf-0ZoBfOjZcAEG_naVc6K6C56WeExl8gCsugR97dU_fGylpfPvUrWhdC1qqHC3KVJXu3-RQnXMMRx4faQhaz4YNelETKtmc12qbgB5RSGb53UHt1N0"/>
+</div>
+<h4 class="font-headline text-xl text-primary font-bold mb-1">张博睿 教授</h4>
+<p class="text-secondary font-label text-[10px] tracking-widest uppercase font-bold mb-4">学术委员会主席</p>
+<p class="text-stone-500 text-sm leading-relaxed">前世界大专辩论赛(WUDC)总决赛评委，专注于跨文化沟通研究。</p>
+</div>
+<div class="text-center">
+<div class="aspect-square rounded-full overflow-hidden mb-8 border-4 border-surface-container-high p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Professional woman in business attire looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPX92SMTnsqXNaEH5ftm-l5_rCxjPMAxJDvVII9QgihEuzraGF9kQB1Z3aiOovGJIl7jwdDPanpWlApoFB2HxLqXwDy-gE3v3ZN8vIiNSiZCGuKT7m21XEilA719DH4Z1MaGMjFTb-Xrxov-l-WhlZ3upjr1kUfY1PNmX4CR3AKrt7XlrShMaH7qkgFvwIyJcIrcBUXgxqkuLlz_IveKKDl6fI184FvcH0b6lzvm4liVXeOJ0DPLPliuHSaQ4YN4aC3vXTNXRKdDU"/>
+</div>
+<h4 class="font-headline text-xl text-primary font-bold mb-1">Elena Smith</h4>
+<p class="text-secondary font-label text-[10px] tracking-widest uppercase font-bold mb-4">英式辩论主教练</p>
+<p class="text-stone-500 text-sm leading-relaxed">牛津辩论社(Oxford Union)前核心成员，拥有十年BP赛制培训经验。</p>
+</div>
+<div class="text-center">
+<div class="aspect-square rounded-full overflow-hidden mb-8 border-4 border-surface-container-high p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Middle-aged gentleman with a warm smile and scholarly glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6FQUVyoEHRHxoZUNjiXeup2Q1Aeq_AkxqI3CWqR1Yx5ST3WMA0yi_QQz9pT8C14k1G5LngOEREHat6W4TLpDYVZU1kjDXYC-tdLFa1RHoxYTQrNd48sOLl4IgRrV7XiW0qLihFqzsjLf-6DhFL1yq_R66VghIH7GcyBLF5tKynUgavx_azrnme8PxdHHsJE-f5BChhDAvntvhjbgr_lu9dtleUSi6Z53So0cBNB1Ge8VmBeHphMDkpv0x4rgcbBlnYd58QKj4E_U"/>
+</div>
+<h4 class="font-headline text-xl text-primary font-bold mb-1">李明远 博士</h4>
+<p class="text-secondary font-label text-[10px] tracking-widest uppercase font-bold mb-4">课程研发总监</p>
+<p class="text-stone-500 text-sm leading-relaxed">哈佛大学教育学博士，致力于将批判性思维融入中文辩论体系。</p>
+</div>
+<div class="text-center">
+<div class="aspect-square rounded-full overflow-hidden mb-8 border-4 border-surface-container-high p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="Young female professional with a bright expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC68ZXTQ-Ymlv790Ucw9zFNc0dofAtg1N4_BxBeWqFRKXulapX_a5Qg8XBrQAP80LX_J_nUZN7qFGMtPvz9qP7w64krFIdOLCrS-nMIiAjGoIbEnn-UPQ2zwHwFETxKhJP6I4FSeOuRLqQmLkxRB4dl5glZAHjjuWek4dNho6oM-Ijf8zssMZXfc1TKKc1tP3ekAxVO-Qpstsb9lKLIcmWZEBKO-xphww_HWBGd37zFrh9wTo37H1azJ7k3nyOQKpVAhVS-kNLbG_Y"/>
+</div>
+<h4 class="font-headline text-xl text-primary font-bold mb-1">王若曦</h4>
+<p class="text-secondary font-label text-[10px] tracking-widest uppercase font-bold mb-4">赛事运营负责人</p>
+<p class="text-stone-500 text-sm leading-relaxed">资深赛事策划人，曾成功举办超过50场大型国际辩论邀请赛。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto scholar-gradient rounded-xl p-16 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl text-white font-bold mb-8">开启您的思辨之旅</h2>
+<p class="text-white/80 max-w-xl mx-auto mb-12 text-lg">
+                    加入中英辩论，不仅是学习技巧，更是拥抱一种全新的思维方式。在这里，每一场对话都在塑造未来。
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-12 py-4 rounded-lg font-label font-bold tracking-widest text-sm hover:scale-[1.05] transition-all">
+                        申请试听课程
+                    </button>
+<button class="bg-transparent border border-white/40 text-white px-12 py-4 rounded-lg font-label font-bold tracking-widest text-sm hover:bg-white/10 transition-all">
+                        下载课程大纲
+                    </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/15 bg-surface-container-low transition-colors">
+<div class="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-headline text-stone-800 font-bold mb-2">中英辩论学院</div>
+<p class="font-sans text-sm tracking-tight text-stone-500">传承博雅教育精神，培养全球视野公民。</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-stone-500 text-sm font-sans hover:text-primary transition-colors" href="#">隐私政策</a>
+<a class="text-stone-500 text-sm font-sans hover:text-primary transition-colors" href="#">使用条款</a>
+<a class="text-stone-500 text-sm font-sans hover:text-primary transition-colors" href="#">联系我们</a>
+<a class="text-stone-500 text-sm font-sans hover:text-primary transition-colors" href="#">加入我们</a>
+</div>
+<div class="text-center md:text-right">
+<p class="font-sans text-xs tracking-tight text-stone-400">© 2024 中英辩论学院. 版权所有.</p>
+<div class="flex gap-4 mt-4 justify-center md:justify-end">
+<a class="text-stone-400 hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+<a class="text-stone-400 hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-xl">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

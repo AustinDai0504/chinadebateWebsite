@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholarch Debate | Shaping the Future</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f0eded",
+              "on-surface-variant": "#5c4040",
+              "secondary": "#735c00",
+              "outline": "#906f6f",
+              "on-secondary-container": "#745c00",
+              "inverse-primary": "#ffb3b3",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-fixed-dim": "#e9c349",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#574500",
+              "on-error-container": "#93000a",
+              "background": "#fcf9f8",
+              "tertiary": "#91001c",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#910022",
+              "primary-fixed-dim": "#ffb3b3",
+              "on-secondary-fixed": "#241a00",
+              "surface-tint": "#bf012f",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#92001c",
+              "primary-fixed": "#ffdad9",
+              "outline-variant": "#e5bdbd",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f3f0ef",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e5e2e1",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffe088",
+              "on-primary-fixed": "#400009",
+              "inverse-surface": "#313030",
+              "tertiary-container": "#be0128",
+              "surface": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "secondary-container": "#fed65b",
+              "on-tertiary-fixed": "#410007",
+              "surface-container-low": "#f6f3f2",
+              "error-container": "#ffdad6",
+              "on-background": "#1c1b1b",
+              "primary-container": "#be002f",
+              "surface-container-high": "#eae7e7",
+              "on-primary-container": "#ffcbcb",
+              "tertiary-fixed-dim": "#ffb3b1",
+              "on-surface": "#1c1b1b",
+              "on-tertiary-container": "#ffcbc9",
+              "on-primary-fixed-variant": "#920022",
+              "surface-bright": "#fcf9f8",
+              "tertiary-fixed": "#ffdad8"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .glass-header {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f8] dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center h-20">
+<!-- Brand Identity -->
+<div class="flex items-center gap-2">
+<span class="text-xl md:text-2xl font-serif font-black text-[#910022] dark:text-[#be002f]">Scholarch Debate</span>
+</div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#910022] dark:text-[#be002f] border-b-2 border-[#910022] pb-1 font-bold font-serif text-lg tracking-tight" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-[#910022] transition-colors font-serif font-bold text-lg tracking-tight" href="#">About</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-[#910022] transition-colors font-serif font-bold text-lg tracking-tight" href="#">Events</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-[#910022] transition-colors font-serif font-bold text-lg tracking-tight" href="#">Resources</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<div class="relative group">
+<button class="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-label text-sm font-semibold hover:text-[#be002f] transition-all">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+<span class="hidden sm:inline">Language</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</button>
+<div class="absolute right-0 top-full pt-2 w-40 hidden group-hover:block z-50 transition-all duration-300">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-xl py-2 animate-fade-in">
+<a class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-[#f6f3f2] dark:hover:bg-slate-800 hover:text-[#be002f] transition-colors" href="{{DATA:SCREEN:SCREEN_12}}">
+                            简体中文
+                        </a>
+<a class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-[#f6f3f2] dark:hover:bg-slate-800 hover:text-[#be002f] transition-colors" href="{{DATA:SCREEN:SCREEN_13}}">
+                            繁體中文
+                        </a>
+<a class="block px-4 py-2 text-sm font-bold text-[#be002f] bg-[#f6f3f2] dark:bg-slate-800" href="{{DATA:SCREEN:SCREEN_5}}">
+                            English
+                            <span class="material-symbols-outlined text-xs ml-1" data-icon="check">check</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[#f6f3f2] dark:bg-slate-900 h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<main class="pt-20">
+<!-- Hero Carousel Section -->
+<section class="relative h-[600px] md:h-[870px] overflow-hidden bg-inverse-surface">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Scholarly Environment" class="w-full h-full object-cover opacity-60" data-alt="Grand library interior with classical architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDka7WOoKzUtFKc3VIRAWeyMGEOC2daZ8fhcYdGxRBCZnsT1y37kAP9MYewHRM5XEumYFypY_UKhsC93HwzXJBP_hU8MD5qSfF97bJhHmnbo6YtiQSidyp0qx4QlaTYpTgB79gH8ewUqC-gc71yMmx2g-ClSefEi2QIuHUhCQUgHELDxSlNBVhpoXJnTKNLcWqFZnb6xk3DWV8gCPl1Ya7HgEajol29hmhj5ZhOnqfLVA7O4dmpDD_k7flLfpjJlK79KK3SYolCovU"/>
+<div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-on-background via-on-background/60 md:via-on-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col justify-center items-start text-white">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-secondary-container mb-4 md:mb-6 block">Established 2024</span>
+<h1 class="font-headline text-4xl md:text-7xl lg:text-8xl font-bold max-w-4xl leading-[1.1] mb-6 md:mb-8 animate-fade-in">
+                Shaping the Future through <br class="hidden md:block"/>
+<span class="italic font-normal">Intellectual Dialogue.</span>
+</h1>
+<p class="font-body text-base md:text-2xl text-surface-variant max-w-2xl mb-8 md:mb-12 font-light leading-relaxed">
+                Promoting British-style debate in China. We bridge traditional wisdom with modern critical thinking to empower the next generation of global thinkers.
+            </p>
+<div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 w-full sm:w-auto">
+<button class="bg-primary-container hover:bg-primary transition-all text-white px-8 md:px-10 py-4 md:py-5 rounded-lg flex items-center justify-center gap-3 font-semibold group">
+                    Join a Tournament
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all text-white px-8 md:px-10 py-4 md:py-5 rounded-lg font-semibold">
+                    Our Mission
+                </button>
+</div>
+</div>
+<!-- Carousel Indicators -->
+<div class="absolute bottom-8 md:bottom-12 left-6 md:left-8 flex gap-4">
+<div class="h-1 w-10 md:w-12 bg-secondary-container rounded-full"></div>
+<div class="h-1 w-10 md:w-12 bg-white/30 rounded-full"></div>
+<div class="h-1 w-10 md:w-12 bg-white/30 rounded-full"></div>
+</div>
+</section>
+<!-- Introduction: Mission Section -->
+<section class="py-16 md:py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Student Debating" class="w-full h-full object-cover" data-alt="Focused student presenting a passionate argument in debate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgFT3ati8gz6xB7_Tp9on9hELE30IMrHVl5kr8ZDd5eBiYjsii2I8nvmf-wPbDscXSDKMl4CLfF1_2H7EpZ7u7SO3ywzXzj52FJieMEQV3DhAt0CzFkRd1VHG-mMMr6cYUBqK8QzazCTGMdS5KIhtx0mMvguYkTG5UV95ORJjMT5F3yFUXLYyRDhBmhJPLKG-VM8ll1u-M9M78foeC6ROUd5xnW2rtmf5tFxrQlJfLHfqL6PbtAE1pyur6gE7VDMchYE6_yGPeibE"/>
+</div>
+<div class="absolute -bottom-6 -right-6 md:-bottom-8 -right-8 bg-primary-container p-8 md:p-12 rounded-xl text-white hidden sm:block">
+<span class="font-headline text-3xl md:text-4xl block mb-2 font-bold italic">Since 2024</span>
+<span class="font-label text-xs md:text-sm uppercase tracking-widest opacity-80">National Excellence</span>
+</div>
+</div>
+<div class="space-y-6 md:space-y-8">
+<div class="w-20 h-1 bg-primary mb-8 md:mb-12"></div>
+<h2 class="font-headline text-3xl md:text-5xl font-bold text-on-background leading-tight">
+                    Bridging Traditional Chinese Values with Global Standards.
+                </h2>
+<p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                    At Scholarch Debate, we believe that the art of rhetoric is not merely about winning arguments, but about the pursuit of truth and harmony. Our curriculum integrates the philosophical depths of classical Chinese thought with the rigorous structure of British parliamentary debate.
+                </p>
+<div class="pt-4 md:pt-6">
+<a class="inline-flex items-center gap-4 text-primary font-bold hover:gap-6 transition-all underline decoration-2 underline-offset-8" href="#">
+                        Explore our Methodology
+                        <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Activities: Bento Grid -->
+<section class="py-20 md:py-28 bg-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="font-label text-sm text-secondary font-bold tracking-[0.2em] uppercase mb-4 block">Upcoming Calendar</span>
+<h2 class="font-headline text-3xl md:text-5xl font-bold text-on-background">Featured Activities</h2>
+</div>
+<button class="text-on-surface hover:text-primary font-semibold transition-colors flex items-center gap-2">
+                    View All Events <span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Event 1 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest transition-all hover:-translate-y-2 hover:shadow-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="National Varsity Cup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Large auditorium filled with debate participants and spectators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVHP1tcSgclgdLxatk79JfMXXPMS1WbrU3oVtV7vaPuUnwVL_nxx9ydukciwO2kKw7ztH3YpRe7Yt_IlQhHxY0pzMOadou2M6fp-mgbLKcwnSs-lJFvmlReg2Xz7xiMMQ0FO0JHHQOPqYDBpPQnE6rVUqmh8GT1Kt3NuE4kSdNrbFLbrblUrhidol94elVW1yCpfTZ9ym5MZ4nSUHOAtGve_tpd-gEqlcFlJG_HXutKX7arqm6RqyTPdrNKpyKUCWmvlJ3YjfHUc"/>
+</div>
+<div class="p-6 md:p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-wider">Tournament</span>
+<span class="text-on-surface-variant font-label text-xs">OCT 12-14</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">The National Varsity Cup</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">China's premier inter-university debate circuit focusing on economic policy and global ethics.</p>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Register Now</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest transition-all hover:-translate-y-2 hover:shadow-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Summer Debate Intensive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Students working in small groups with mentors around tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxBau6cdhbYJFQaH4Ao242y6lVD5RdzJyNyh-_DaiEq_d-CQ8UhTRO-XnWznYiaLaJPROoiehVzs9jVufUnvMVS9zZ0r8FWrq9vp7EAZBX9BzpU360O3EU-moazu8LT9-rOv1PaDhzqWfEVGlBp4ItfrMm9oeGjd0aXGo5P_3yC_QX0l1OX5shAmHJLLUkFY2HFVZzrU2D4PCHRBhtc_RO6zax_4ckP_1qicOnmomt1DSMsPPJ17LTuyg_LipA2snA9NMwV0ZnVoA"/>
+</div>
+<div class="p-6 md:p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-wider">Workshop</span>
+<span class="text-on-surface-variant font-label text-xs">JUL 05-20</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Summer Debate Intensive</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">A two-week residency program for high school students to master the art of public speaking.</p>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Learn More</button>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest transition-all hover:-translate-y-2 hover:shadow-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="The Scholars' Seminar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Roundtable discussion among academic experts and leaders" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjfzC9lHFHRu9RNfUmlLAaquVvfBQQjleRHrqbx_Yg2XPMPNXZ9RJnYDYwN4idvhuBizR5ea1UDRxkQb1mKtnngZ5fBbp6u4Swv2wa8UP0PnMjKgYMcLlUbaqG-rwT3glMQVl14izgaC0BQsPJrPB_pTTvLrIkRAnS_grmRJgj_i6xoSuiB0V5CLnwjaJRL1PHYGB5AY6tU8uE-556AR9uvxM1sNv8frtu8Extx4q3v5Tk7TERCwXfo6ticSIfWjpmHx6aMusvQw"/>
+</div>
+<div class="p-6 md:p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase tracking-wider">Seminar</span>
+<span class="text-on-surface-variant font-label text-xs">NOV 30</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">The Scholars' Seminar</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Exclusive gathering of debate coaches and alumni to discuss the evolution of BP debate.</p>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Request Invite</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Component: Debate Pulse / Key Highlights -->
+<section class="py-20 md:py-24 bg-primary text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-primary-container transform skew-x-12 translate-x-1/2 md:translate-x-32 opacity-50"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+<div class="md:w-1/3 text-center md:text-left">
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-6">Key Member Highlights</h2>
+<p class="text-on-primary-container text-lg leading-relaxed opacity-90">
+                    Our leadership brings together decades of experience from international debating circuits and Chinese educational institutions.
+                </p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+<!-- Founder 1 -->
+<div class="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/10 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+<img alt="Founder Dr. Chen" class="w-20 h-20 rounded-full object-cover border-2 border-secondary-container flex-shrink-0" data-alt="Professional portrait of a male educator in a formal suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsYHlrBIajrvLYjmgG06-kF40IlMnQOJp0opBFLRVlR5j7YfzQW3FsEMvOldOKoJm8unaDvnFGaQGZY2d6Is2x35sAVrYfoidzAsvoA8cTdQ-AtMHxn0L-9vNYxHl4CL21Noib6SODiYrym1SJ6VcQj_enBW-XewSLPGzWGIYZFzDPiRlZBbgxRPRUvlsup9DFLqoec3s7eRwEmGMPd7ZkrJob7fTulIeh-VKXE-Q3ENdyL3BHwqxF7bMVtu69EWNEahKgSzn8_xs"/>
+<div>
+<h4 class="font-headline text-xl font-bold mb-1 text-secondary-container">Dr. Lin Chen</h4>
+<p class="font-label text-xs uppercase tracking-wider mb-3 opacity-70">Executive Director</p>
+<p class="text-sm opacity-90 italic">"Dialogue is the bridge to universal understanding."</p>
+</div>
+</div>
+<!-- Founder 2 -->
+<div class="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/10 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+<img alt="Co-Founder Sarah Zhang" class="w-20 h-20 rounded-full object-cover border-2 border-secondary-container flex-shrink-0" data-alt="Professional portrait of a female educator with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXcSJC9tnrqp5mh0P07kn0rk4v_IVmiSriMPdB7WB53Le5Hy-1Vp7BtY_7ePBYY5iJpz-di90qQ--LshLlJbrN5jgqfv_-U4m4g5gMW6zCTvIiyb4YijtSdwuSMkqWGZE2sjLkiM4HVPlZJXMmmjSLzAJbgmqr7BX-_21teSSjREOL6GVmUWwllGOeNLSzZJCYswLnJQKg9_IskI_3d7ZTMF6GjsBJdnA7pNHM0rOCdeqW39yKW_0EBFe1zHXzuCJOJpuEHAracZM"/>
+<div>
+<h4 class="font-headline text-xl font-bold mb-1 text-secondary-container">Prof. Sarah Zhang</h4>
+<p class="font-label text-xs uppercase tracking-wider mb-3 opacity-70">Chief Academic Officer</p>
+<p class="text-sm opacity-90 italic">"Critical thinking is the ultimate legacy."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News/Updates Section -->
+<section class="py-20 md:py-24 bg-surface">
+<div class="max-w-5xl mx-auto px-6 md:px-8">
+<div class="text-center mb-12 md:mb-16">
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-background mb-4">Latest Insights &amp; Updates</h2>
+<p class="text-on-surface-variant">Stay informed with the latest from the Chinese debate community.</p>
+</div>
+<div class="space-y-4">
+<!-- News Item 1 -->
+<div class="group p-6 rounded-xl hover:bg-surface-container-low transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 border-b border-outline-variant/30 last:border-0">
+<div class="flex-1">
+<span class="text-secondary font-label text-[10px] font-bold uppercase tracking-widest mb-2 block italic">Insight</span>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">The Intersection of Confucianism and Western Rhetoric</h3>
+<p class="text-on-surface-variant text-sm">Published by Academic Board • 5 min read</p>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-4">
+<span class="text-on-surface-variant font-label text-xs">August 24, 2024</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- News Item 2 -->
+<div class="group p-6 rounded-xl hover:bg-surface-container-low transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 border-b border-outline-variant/30 last:border-0">
+<div class="flex-1">
+<span class="text-primary font-label text-[10px] font-bold uppercase tracking-widest mb-2 block italic">Announcement</span>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Registration Open: Fall 2024 Regional Qualifiers</h3>
+<p class="text-on-surface-variant text-sm">Event Operations • 2 min read</p>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-4">
+<span class="text-on-surface-variant font-label text-xs">August 21, 2024</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- News Item 3 -->
+<div class="group p-6 rounded-xl hover:bg-surface-container-low transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 border-b border-outline-variant/30 last:border-0">
+<div class="flex-1">
+<span class="text-secondary font-label text-[10px] font-bold uppercase tracking-widest mb-2 block italic">Community</span>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Alumni Spotlight: From Debater to Diplomat</h3>
+<p class="text-on-surface-variant text-sm">Interview Series • 8 min read</p>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-4">
+<span class="text-on-surface-variant font-label text-xs">August 15, 2024</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="mt-12 md:mt-16 text-center">
+<button class="px-8 py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all">
+                    Browse the Archive
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-[#f6f3f2] dark:bg-slate-900 transition-colors">
+<div class="max-w-7xl mx-auto py-12 px-6 md:px-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
+<div class="max-w-sm">
+<span class="font-serif font-bold text-[#910022] text-2xl mb-4 block">Scholarch Debate</span>
+<p class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-wide leading-relaxed">
+                Cultivating a community of visionary thinkers through the disciplined pursuit of competitive debate and scholarly inquiry.
+            </p>
+<div class="flex gap-4 mt-6">
+<a class="text-[#910022] hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-[#910022] hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+<a class="text-[#910022] hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined" data-icon="group">group</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-16">
+<div>
+<h4 class="text-on-surface font-bold text-sm uppercase tracking-widest mb-6">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#910022] dark:hover:text-[#fed65b] transition-all font-sans text-sm tracking-wide" href="#">Contact</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#910022] dark:hover:text-[#fed65b] transition-all font-sans text-sm tracking-wide" href="#">Mission</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#910022] dark:hover:text-[#fed65b] transition-all font-sans text-sm tracking-wide" href="#">Curriculum</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-surface font-bold text-sm uppercase tracking-widest mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#910022] dark:hover:text-[#fed65b] transition-all font-sans text-sm tracking-wide" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#910022] dark:hover:text-[#fed65b] transition-all font-sans text-sm tracking-wide" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-8 py-8 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+<p class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-wide">© 2024 Chinese Debate Organization. All Rights Reserved.</p>
+<div class="flex items-center gap-2 text-[#910022] font-semibold text-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+            Certified Member of World Debate Council
+        </div>
+</div>
+</footer>
+</body></html>
